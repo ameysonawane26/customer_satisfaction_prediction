@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-data = pd.read_csv('Reviews.csv')
+
+data = pd.read_excel('Reviews_New.xlsx')
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(data['Text'], data['Score'], test_size=0.20)
