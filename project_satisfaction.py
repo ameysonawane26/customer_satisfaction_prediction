@@ -34,12 +34,12 @@ if option >3:
 while st.button('Submit',key="1"):
     st.header('Prediction:')
     if num>3:
-        img = Image.open("D:\IT vedant\Machine Learning\Screenshot 2021-12-17 183226 (2).jpg")
+        img = Image.open("Screenshot 2021-12-17 183226 (2).jpg")
         st.image(img)
     elif 2<num<4:
-        img1 = Image.open("D:\IT vedant\Machine Learning\Screenshot 2021-12-17 175702.jpg")
+        img1 = Image.open("Screenshot 2021-12-17 175702.jpg")
         st.image(img1)
     else:
-        img2 = Image.open("D:\IT vedant\Machine Learning\Screenshot 2021-12-17 183119 (2).jpg")
+        img2 = Image.open("Screenshot 2021-12-17 183119 (2).jpg")
         st.image(img2)
 
