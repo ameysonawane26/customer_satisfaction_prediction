@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-import cv2
 import numpy as np
+from PIL import Image
 data = pd.read_csv('Reviews.csv')
 from sklearn.model_selection import train_test_split
 
@@ -33,24 +33,12 @@ if option >3:
 while st.button('Submit',key="1"):
     st.header('Prediction:')
     if num>3:
-        filename = ("D:\IT vedant\Machine Learning\Screenshot 2021-12-17 183226 (2).jpg")
-        img = cv2.imread(filename, 1)
-        image = np.array([img])
-        original_title = '<p style="font-family:Courier; color:White; font-size: 20px;">satisfied</p>'
-        st.markdown(original_title, unsafe_allow_html=True)
-        st.image(image, channels="BGR")
-    elif num==3:
-        filename = ("D:\IT vedant\Machine Learning\Screenshot 2021-12-17 175702.jpg")
-        img = cv2.imread(filename, 1)
-        image = np.array([img])
-        original_title = '<p style="font-family:Courier; color:White; font-size: 20px;">Neutral</p>'
-        st.markdown(original_title, unsafe_allow_html=True)
-        st.image(image, channels="BGR")
+        img = Image.open("D:\IT vedant\Machine Learning\Screenshot 2021-12-17 183226 (2).jpg")
+        st.image(img)
+    elif 2<num<4:
+        img1 = Image.open("D:\IT vedant\Machine Learning\Screenshot 2021-12-17 175702.jpg")
+        st.image(img1)
     else:
-        filename = ("D:\IT vedant\Machine Learning\Screenshot 2021-12-17 183119 (2).jpg")
-        img = cv2.imread(filename, 1)
-        image = np.array([img])
-        original_title = '<p style="font-family:Courier; color:White; font-size: 20px;">Unsatisfied</p>'
-        st.markdown(original_title, unsafe_allow_html=True)
-        st.image(image, channels="BGR")
+        img2 = Image.open("D:\IT vedant\Machine Learning\Screenshot 2021-12-17 183119 (2).jpg")
+        st.image(img2)
 
