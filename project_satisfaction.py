@@ -28,15 +28,14 @@ num=clf.predict([review])
 
 option = st.selectbox('Please give rating to the product',(1,2,3,4,5),key=3)
 
-if option >3:
-    num-=1
+number = (num+option)/2
 
 while st.button('Submit',key=1):
     st.header('Prediction:')
-    if num>3:
+    if number>3:
         img = Image.open("Screenshot 2021-12-17 183226 (2).jpg")
         st.image(img)
-    elif 2<num<4:
+    elif 2<number<4:
         img1 = Image.open("Screenshot 2021-12-17 175702.jpg")
         st.image(img1)
     else:
