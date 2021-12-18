@@ -21,17 +21,17 @@ clf.fit(X_train,y_train)
 st.title('Customer Satisfaction Prediction')
 
 
-review = st.text_area('Enter your Food review',key="2")
+review = st.text_area('Enter your Food review',key=2)
 num=clf.predict([review])
 
     
 
-option = st.selectbox('Please give rating to the product',(1,2,3,4,5),key="3")
+option = st.selectbox('Please give rating to the product',(1,2,3,4,5),key=3)
 
 if option >3:
     num-=1
 
-while st.button('Submit',key="1"):
+while st.button('Submit',key=1):
     st.header('Prediction:')
     if num>3:
         img = Image.open("Screenshot 2021-12-17 183226 (2).jpg")
