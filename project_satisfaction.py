@@ -43,6 +43,7 @@ while press:
     st.header(summary)
     st.header(review)
     st.header(option)
+    break
     
 #     st.header('Prediction:')
 #     if number>3:
