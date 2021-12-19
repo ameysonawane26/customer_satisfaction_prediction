@@ -40,7 +40,10 @@ option = st.selectbox('Please give rating to the product',(1,2,3,4,5),key=4)
 press = st.button('Submit',key=1)
 
 while press:
-    st.header(summary,review,option)
+    st.header(summary)
+    st.header(review)
+    st.header(option)
+    
 #     st.header('Prediction:')
 #     if number>3:
 #         img = Image.open("Screenshot 2021-12-17 183226 (2).jpg")
