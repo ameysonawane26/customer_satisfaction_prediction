@@ -37,7 +37,9 @@ if (num3/num2)*100 >=70:
 else:
     number = (num1+option)/2
 
-while st.button('Submit',key=1):
+press = st.button('Submit',key=1)
+
+while press:
     st.header('Prediction:')
     if number>3:
         img = Image.open("Screenshot 2021-12-17 183226 (2).jpg")
