@@ -44,9 +44,12 @@ while press:
     if number>3:
         img = Image.open("Screenshot 2021-12-17 183226 (2).jpg")
         st.image(img)
+        break
     elif 2<number<4:
         img1 = Image.open("Screenshot 2021-12-17 175702.jpg")
         st.image(img1)
+        break
     else:
         img2 = Image.open("Screenshot 2021-12-17 183119 (2).jpg")
         st.image(img2)
+        break
