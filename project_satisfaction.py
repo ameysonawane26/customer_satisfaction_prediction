@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-data = pd.read_excel('Reviews_all_new.xlsx')
+data = pd.read_excel('Data/Reviews_all_new.xlsx')
 
 X1 = data['Summary'].values.astype('U')
 X2= data['Text']
@@ -42,14 +42,14 @@ press = st.button('Submit',key=1)
 while press:
     st.header('Prediction:')
     if number>3:
-        img = Image.open("Screenshot 2021-12-17 183226 (2).jpg")
+        img = Image.open("Data/Screenshot 2021-12-17 183226 (2).jpg")
         st.image(img)
         break
     elif 2<number<4:
-        img1 = Image.open("Screenshot 2021-12-17 175702.jpg")
+        img1 = Image.open("Data/Screenshot 2021-12-17 175702.jpg")
         st.image(img1)
         break
     else:
-        img2 = Image.open("Screenshot 2021-12-17 183119 (2).jpg")
+        img2 = Image.open("Data/Screenshot 2021-12-17 183119 (2).jpg")
         st.image(img2)
         break
