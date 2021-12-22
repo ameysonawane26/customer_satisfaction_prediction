@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-data = pd.read_excel('Reviews_all_new.xlsx')
+data = pd.read_excel(C:\Users\Amey\OneDrive\Documents\GitHub\customer_satisfaction_prediction\Data\Reviews_all_new.xlsx)
 
 X1 = data['Summary'].values.astype('U')
 X2= data['Text']
