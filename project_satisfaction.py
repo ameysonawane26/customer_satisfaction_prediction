@@ -13,6 +13,13 @@ X1 = data['Summary'].values.astype('U')
 X2= data['Text']
 y = data['Score']
 
+@st.cache(suppress_st_warning=True)
+def fit_model():
+    clf1 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
+    clf2 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
+    clf1.fit(X1,y)
+    clf2.fit(X2,y)
+
 fit_model()
 
 
@@ -51,10 +58,5 @@ while press:
         st.image(img2)
         break
         
-@st.cache
-def fit_model():
-    clf1 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
-    clf2 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
-    clf1.fit(X1,y)
-    clf2.fit(X2,y)
+
   
