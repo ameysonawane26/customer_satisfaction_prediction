@@ -17,8 +17,9 @@ y = data['Score']
 def fit_model():
     clf1 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
     clf2 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
-    clf1.fit(X1,y)
-    clf2.fit(X2,y)
+    clf1 = clf1.fit(X1,y)
+    clf2 = clf2.fit(X2,y)
+    return clf1,clf2
 
 fit_model()
 
