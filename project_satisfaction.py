@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
+from sklearn.pipeline import Pipeline
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+
 
 data = pd.read_excel('Data/Reviews_all_new.xlsx')
 
@@ -9,15 +13,8 @@ X1 = data['Summary'].values.astype('U')
 X2= data['Text']
 y = data['Score']
 
-from sklearn.pipeline import Pipeline
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.linear_model import LogisticRegression
+fit_model()
 
-clf1 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
-clf2 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
-
-clf1.fit(X1,y)
-clf2.fit(X2,y)
 
 st.title('Customer Satisfaction Prediction')
 
@@ -53,3 +50,11 @@ while press:
         img2 = Image.open("Data/Screenshot 2021-12-17 183119 (2).jpg")
         st.image(img2)
         break
+        
+@st.cache
+def fit_model():
+    clf1 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
+    clf2 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
+    clf1.fit(X1,y)
+    clf2.fit(X2,y)
+  
