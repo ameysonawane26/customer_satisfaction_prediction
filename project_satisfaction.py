@@ -15,13 +15,12 @@ y = data['Score']
 
 @st.cache(suppress_st_warning=True)
 def fit_model():
-    clf1 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
-    clf2 = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
-    clf1 = clf1.fit(X1,y)
-    clf2 = clf2.fit(X2,y)
-    return clf1,clf2
+    clf = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
+    model_1 = clf.fit(X1,y)
+    model_2 = clf.fit(X2,y)
+    return model_1,model_2
 
-fit_model()
+model_1,model_2 = fit_model()
 
 
 st.title('Customer Satisfaction Prediction')
@@ -32,8 +31,8 @@ review = st.text_area('Enter your Food review',key='2')
 
 option = st.selectbox('Please give rating to the product',(1,2,3,4,5),key=4)
 
-num1=clf1.predict([summary])
-num2=clf2.predict([review])
+num1=model_1.predict([summary])
+num2=model_2.predict([review])
 
 num3 = (num1+option)/2
 
