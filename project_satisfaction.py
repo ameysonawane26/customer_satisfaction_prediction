@@ -6,8 +6,11 @@ from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 
+@st.cache
+def get_data():
+    return pd.read_excel('Data/Reviews_all_new.xlsx')
 
-data = pd.read_excel('Data/Reviews_all_new.xlsx')
+data = get_data()
 
 X1 = data['Summary'].values.astype('U')
 X2= data['Text']
