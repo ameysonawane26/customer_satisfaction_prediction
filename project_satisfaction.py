@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import MultinomialNB
 
 @st.cache
 def get_data():
@@ -18,7 +18,7 @@ y = data['Score']
 
 @st.cache(suppress_st_warning=True)
 def fit_model():
-    clf = Pipeline([('vectorizer', CountVectorizer()),('lr', LogisticRegression(solver='lbfgs', max_iter=400))])
+    clf = Pipeline([('vectorizer', CountVectorizer()),('mb', MultinomialNB())])
     model_1 = clf.fit(X1,y)
     model_2 = clf.fit(X2,y)
     return model_1,model_2
