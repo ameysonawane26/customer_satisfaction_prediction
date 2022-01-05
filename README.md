@@ -7,7 +7,7 @@ This is a Streamlit based webapp which will take a review from user. By using ma
 
 
 ## Primary Goal
-To predict sentiment of user by using ML model if user is Satisfied, nuetral or unsatisfied.
+To predict sentiment of user by using ML model if user is Satisfied, neutral or unsatisfied.
 
 ## Solution
 Used amazon fine food dataset which contains more than 100K reviews. Trained ML model with this data and got Naive bayes classifier giving good accuracy.
